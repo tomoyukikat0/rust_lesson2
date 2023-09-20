@@ -1,12 +1,20 @@
-fn say_hello() {
-    println!("Hello, world!");
-}
+fn fizzbuzz(end: i32) {
+    let mut x: i32 = 1;
 
-fn add(a: i32, b: i32) -> i32 {
-    a + b
+    while x <= end {
+        if x % 3 == 0 && x % 5 == 0 {
+            println!("FizzBuzz");
+        } else if x % 3 == 0 {
+            println!("Fizz");
+        } else if x % 5 == 0 {
+            println!("Buzz");
+        } else {
+            println!("{}", x);
+        }
+        x += 1;
+    }
 }
 
 fn main() {
-    say_hello();
-    println!("1 + 2 = {}", add(1, 2));
+    fizzbuzz(30)
 }
